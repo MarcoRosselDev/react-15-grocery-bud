@@ -6,7 +6,24 @@ function App() {
   const [name, setName] = useState("");
   const [list, setList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
-  return <h2>grocery bud setup</h2>;
+  const [editID, setEditID] = useState(null);
+  const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("hola");
+  };
+
+  return (
+    <section className="section-center">
+      <form className="grocery-form" onSubmit={handleSubmit}>
+        <div className="grocery-container">
+          <List />
+          <button className="clear-btn">clear items</button>
+        </div>
+      </form>
+    </section>
+  );
 }
 
 export default App;
